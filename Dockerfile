@@ -13,8 +13,6 @@ FROM base AS builder
 WORKDIR /var/www/frontend
 COPY --from=base /var/www/frontend/node_modules ./node_modules
 COPY . .
-#note:Need fix for hardcoded url
-ENV NEXT_PUBLIC_BACKEND_URL=""
 RUN npm run  build
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
